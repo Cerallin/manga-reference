@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>车牌bib转换器</title>
+</head>
+
+<body>
+    <div class="main">
+        <form id="form" class="form-area" onsubmit="return false">
+            <div class="input">
+                <label for="input-text">车牌</label>
+                <input id="input-text" type="text" name="name" placeholder="[author] title of the manga (COMIC NAME 2023年5月号)">
+            </div>
+            <fieldset>
+                <legend>类型</legend>
+                <div class="option">
+                    <input id="radio-doujin" type="radio" name="type" value="doujin" checked>
+                    <label for="radio-doujin">同人志</label>
+                </div>
+                <div class="option">
+                    <input id="radio-manga" type="radio" name="type" value="manga">
+                    <label for="radio-manga">漫画</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>日期</legend>
+                <div class="field">
+                    <label for="year">年份</label>
+                    <input id="year" type="number" name="year" placeholder="2010">
+                </div>
+                <div class="field">
+                    <label for="month">月份</label>
+                    <input id="month" type="number" name="month" placeholder="12">
+                </div>
+                <div class="field">
+                    <label for="date">日期</label>
+                    <input id="date" type="number" name="date" placeholder="31">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>漫画信息</legend>
+                <div class="field">
+                    <label for="volume">卷数</label>
+                    <input id="volume" type="number" name="volume" value="0">
+                </div>
+                <div class="field">
+                    <label for="page-start">起始页码</label>
+                    <input id="page-start" type="number" name="pageStart" value="0">
+                    <label for="page-end">终止页码</label>
+                    <input id="page-end" type="number" name="pageEnd" value="0">
+                </div>
+            </fieldset>
+            <button type="submit" onclick="generate()">Go</button>
+        </form>
+        <div class="result">
+            <label for="result-area">bib结果</label>
+            <textarea id="result-area" onclick="this.focus();this.select()" readonly="readonly"></textarea>
+        </div>
+    </div>
+    <script src="generate.js"></script>
+</body>
+
+</html>

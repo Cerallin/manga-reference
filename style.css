@@ -1,0 +1,60 @@
+.main {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-area, .result {
+    width: 80vw;
+    max-width: 100%;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input label {
+    font-size: 24px;
+}
+
+.input input {
+    padding: 3px 0px;
+    font-size: 24px;
+    width: calc(100% - 0.5em);
+    margin-inline-start: 0.75em;
+    margin-inline-end: 0.75em;
+}
+
+.field + .field {
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 8px 30px;
+}
+
+.result {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result label {
+    font-size: 24px;
+}
+
+.result #result-area {
+    width: calc(100% - 10px);
+    min-height: 300px;
+    font-size: 20px;
+    padding: 5px;
+}
