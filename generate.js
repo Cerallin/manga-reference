@@ -10,7 +10,7 @@ const form = document.getElementById('form')
 const resultArea = document.getElementById('result-area')
 
 const mangaTemplate = [
-  '@article{{0}_{3}_{1}},',
+  '@article{{0}_{3}_{1},',
   '  author  = {{0}},',
   '  title   = {{1}},',
   '  journal = {{2}},',
