@@ -62,7 +62,7 @@ function generate () {
 
   if (!matching) return false
 
-  const volume = formData.get('volume')
+  const volume = name.match(/vol.?\s*?(\d+)/i)[1] || formData.get('volume')
   const pageStart = formData.get('pageStart')
   const pageEnd = formData.get('pageEnd')
 
@@ -71,16 +71,16 @@ function generate () {
       doujinTemplate,
       // author
       (matching[2] || '')
-      .replace(/^\s*?\(/, '')
-      .replace(/\)\s*?$/, '')
-      .replaceAll(/\s/g, ''),
+        .replace(/^\s*?\(/, '')
+        .replace(/\)\s*?$/, '')
+        .replaceAll(/\s/g, ''),
       // title
       matching[3],
       year,
       month,
       day,
       // publisher
-      matching[1].replaceAll(/\s/g, ''),
+      matching[1].replaceAll(/\s/g, '')
     ),
     manga: format_string(
       mangaTemplate,
@@ -89,12 +89,12 @@ function generate () {
       // title
       matching[2],
       // comic
-      matching[3].replace(/\d+年\d+月号/, ''),
+      matching[3].replace(/\d+年\d+月号/, '').replace(/vol.?\s*?(\d+)/i, ''),
       year,
       month,
       volume,
       pageStart,
-      pageEnd,
+      pageEnd
     )
   }[type].replaceAll(/\r\n.*(null|\{)\},?/g, '')
 
