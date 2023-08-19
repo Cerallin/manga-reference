@@ -62,7 +62,8 @@ function generate () {
 
   if (!matching) return false
 
-  const volume = name.match(/vol.?\s*?(\d+)/i)[1] || formData.get('volume')
+  const volume =
+    (name.match(/vol.?\s*?(\d+)/i) || [])[1] || formData.get('volume')
   const pageStart = formData.get('pageStart')
   const pageEnd = formData.get('pageEnd')
 
